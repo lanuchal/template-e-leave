@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
       {/* <RemoteDataGrid /> */}
-      {/* <PdfGenerator /> */}
-      <ImgCrop1 />
+      <PdfGenerator />
+      {/* <ImgCrop1 /> */}
       {/* <ExcelExportButton /> */}
       {/* <ExcelImportButton /> */}
       {/* <DrawingBoard /> */}
