@@ -13,6 +13,7 @@
     "@imgly/background-removal": "^1.0.6",
     "axios": "^1.4.0",
     "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.6.0",
     "konva": "^9.2.0",
     "react": "^18.2.0",
     "react-cropper": "^2.3.3",

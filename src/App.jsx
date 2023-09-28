@@ -5,6 +5,7 @@ import ExcelExportButton from "./ExcelExportButton";
 import ExcelImportButton from "./ExcelImportButton";
 import PdfGenerator from "./PdfGenerator";
 import ImgCrop1 from "./ImgCrop1";
+import Pdf from "./Pdf";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
   return (
     <div>
       {/* <RemoteDataGrid /> */}
-      <PdfGenerator />
+      {/* <PdfGenerator /> */}
+      <Pdf />
       {/* <ImgCrop1 /> */}
       {/* <ExcelExportButton /> */}
       {/* <ExcelImportButton /> */}
