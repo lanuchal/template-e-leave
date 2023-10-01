@@ -2,7 +2,7 @@ import React from "react";
 import { jsPDF } from "jspdf";
 import checkImg from "./assets/imgs/check.png";
 
-function Pdf() {
+function Pdf2() {
   const genPdf = () => {
     const head = "แบบบันทึกใบลาพักพ่อน";
     const writeAddress = "โรงเรียน";
@@ -21,7 +21,7 @@ function Pdf() {
     const userLeaveActiondateSum = 4;
     const userLeaveOut = "1";
     const userLeaveContact = `169 ถนนลงหาดบางแสง ตำบลแสนสุข อำเภอเมืองชลบุรี จังหวัดชลบุรี 20131 ${
-      userLeaveOut == "1" ? "(ขออนุญาติออกนอกเขตจังหวัดสมุทรสาคร)" :""
+      userLeaveOut == "0" ? "(ขออนุญาติออกนอกเขตจังหวัดสมุทรสาคร)" :""
     }`;
 
     const userLeaveOld = "4";
@@ -40,33 +40,6 @@ function Pdf() {
     const checkPosition = `${checkAct != "0" ? "รักษาการแทน " : ""}ผู้ตรวจสอบ`;
     const checkDate = `6 มีนาคม 2566`;
 
-    const deputySecretaryName = "นางกานดา แสงทองศรี";
-    const deputySecretaryAct = "0";
-    const deputySecretaryPosition = `${
-      deputySecretaryAct != "0" ? "รักษาการแทน " : ""
-    }ปลัดองค์การบริส่วนจังหวัด`;
-    const deputySecretaryDate = `6 มีนาคม 2566`;
-
-    const deputyName = "นางสาววินุรักษ์ สุขสำราญ";
-    const deputyAct = "1";
-    const deputyPosition = `${
-      deputyAct != "0" ? "รักษาการแทน " : ""
-    }รองปลัดองค์การบริส่วนจังหวัด`;
-    const deputyDate = `6 มีนาคม 2566`;
-
-    const vicePremierName = "นางสาววินุรักษ์ สุขสำราญ";
-    const vicePremierAct = "0";
-    const vicePremierPosition = `${
-      vicePremierAct != "0" ? "รักษาการแทน " : ""
-    }รองนายกองค์การบริหารส่วนจังหวัด`;
-    const vicePremierDate = `6 มีนาคม 2566`;
-
-    const directorName = "นางสาวฉวีวรรณ ไตรรัตนานนท์ ";
-    const directorAct = "0";
-    const directorPosition = `${
-      directorAct != "0" ? "รักษาการแทน " : ""
-    }ผู้อำนวนการกองเจ้าหน้าที่`;
-    const directorDate = `6 มีนาคม 2566`;
 
     const directorGroupName = "นายสมเกียรติ์ จันทร์ทอง";
     const directorGroupAct = "2";
@@ -92,15 +65,11 @@ function Pdf() {
     }นายกองค์การบริส่วนจังหวัด `;
     const presidentDate = `6 มีนาคม 2566`;
 
-    const yCheck = 170;
-    const yDeputySecretary = 203;
-    const yDedeputy = 236;
-    const yVicePremier = 269;
+    const yCheck = 175;
 
-    const yDirectorGroup = 128;
-    const yDirector = 160;
-    const yHead = 215;
-    const yPresident = 269;
+    const yDirectorGroup = 135;
+    const yHead = 205;
+    const yPresident = 265;
 
     const doc = new jsPDF({
       orientation: "portrait",
@@ -144,15 +113,15 @@ function Pdf() {
       "center"
     );
     doc.text(
-      "(ลงชื่อ)                                        ",
-      165,
+      "(ลงชื่อ)                                                 ",
+      159,
       95,
       null,
       null,
       "center"
     );
-    doc.text("( " + userLeaveName + " )", 165, 105, null, null, "center");
-    doc.text(userLeavePosition, 165, 111, null, null, "center");
+    doc.text("( " + userLeaveName + " )", 159, 105, null, null, "center");
+    doc.text(userLeavePosition, 159, 111, null, null, "center");
 
     doc.text("สถิติการลาในปีงบประมาณ", 60, 129, null, null, "center");
 
@@ -170,53 +139,11 @@ function Pdf() {
     doc.rect(67, 146, 20, 10);
     doc.text(userLeaveSum, 77, 152, null, null, "center");
 
-    doc.text("(ลงชื่อ)                               ผู้ตรวจสอบ", 27, yCheck);
+    doc.text("(ลงชื่อ)                                       ผู้ตรวจสอบ", 27, yCheck);
     doc.text("( " + checkName + " )", 60, yCheck + 6, null, null, "center");
     doc.text(checkPosition, 60, yCheck + 12, null, null, "center");
     doc.text(checkDate, 60, yCheck + 18, null, null, "center");
 
-    doc.text("(ลงชื่อ)", 27, yDeputySecretary);
-    doc.text(
-      "( " + deputySecretaryName + " )",
-      60,
-      yDeputySecretary + 6,
-      null,
-      null,
-      "center"
-    );
-    doc.text(
-      deputySecretaryPosition,
-      60,
-      yDeputySecretary + 12,
-      null,
-      null,
-      "center"
-    );
-    doc.text(
-      deputySecretaryDate,
-      60,
-      yDeputySecretary + 18,
-      null,
-      null,
-      "center"
-    );
-
-    doc.text("(ลงชื่อ)", 27, yDedeputy);
-    doc.text("( " + deputyName + " )", 60, yDedeputy + 6, null, null, "center");
-    doc.text(deputyPosition, 60, yDedeputy + 12, null, null, "center");
-    doc.text(deputyDate, 60, yDedeputy + 18, null, null, "center");
-
-    doc.text("(ลงชื่อ)", 27, yVicePremier);
-    doc.text(
-      "( " + vicePremierName + " )",
-      60,
-      yVicePremier + 6,
-      null,
-      null,
-      "center"
-    );
-    doc.text(vicePremierPosition, 60, yVicePremier + 12, null, null, "center");
-    doc.text(vicePremierDate, 60, yVicePremier + 18, null, null, "center");
 
     doc.text("(ลงชื่อ)", 126, yDirectorGroup);
     doc.text(
@@ -237,17 +164,6 @@ function Pdf() {
     );
     doc.text(directorGroupDate, 159, yDirectorGroup + 18, null, null, "center");
 
-    doc.text("(ลงชื่อ)", 126, yDirector);
-    doc.text(
-      "( " + directorName + " )",
-      159,
-      yDirector + 6,
-      null,
-      null,
-      "center"
-    );
-    doc.text(directorPosition, 159, yDirector + 12, null, null, "center");
-    doc.text(directorDate, 159, yDirector + 18, null, null, "center");
 
     doc.text("(ลงชื่อ)", 126, yHead);
     doc.text("( " + headName + " )", 159, yHead + 6, null, null, "center");
@@ -315,4 +231,4 @@ function Pdf() {
   );
 }
 
-export default Pdf;
+export default Pdf2;
